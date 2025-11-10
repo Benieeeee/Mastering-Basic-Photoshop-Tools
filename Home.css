@@ -5,7 +5,7 @@
 
 body {
     font-family: sans-serif;
-    background-image: url("../../Graphics/Top.png"), url(../../Graphics/Bottom.png);
+    background-image: url("Graphics/Top.png"), url(Graphics/Bottom.png);
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center, right ;
