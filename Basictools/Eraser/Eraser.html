@@ -5,45 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mastering Basic Photoshop Tools - Eraser Tool</title>
-    <link rel="icon" type="img/jpg" href="../../Favicon/Letran official logo.png">
+    <link rel="icon" type="image/png" href="../../Favicon/Letran official logo.png">
     <link rel="stylesheet" href="Eraser.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="Navbar">
-            <ul>
-                <div class="Home">
-                    <li><a href="../../Index.html">Home</a></li>
-                </div>
+    <header class="MainHeader">
+        <nav class="Navbar">
+            <ul class="NavLinks">
+                <li><a href="../../Index.html">Home</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Sample Works</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
 
-    <main>
+    <main class="ContentArea">
 
-        <div class="Desc">
-            <h1><img src="./../../Graphics/Putoshop.png"></h1>
-            <p>
-                The Eraser Tool allows you to remove parts of an image or layer, creating transparency or exposing
-                layers beneath. It's essential for refining your artwork with precision.
-            </p>
-        </div>
+        <section class="HeroSection">
+            <div class="Desc">
+                <h1>Eraser Tool</h1> 
+                <p>
+                    The Eraser Tool allows you to remove parts of an image or layer, creating transparency or exposing
+                    layers beneath. It's essential for refining your artwork with precision.
+                </p>
+            </div>
+            
+            <aside class="ToolSidebar">
+                <ul class="ToolList">
+                    <li><button class="ToolButton" onclick="location.href='../Brush/Brush.html'"><img src="../../Graphics/BrushW.png" alt="Brush Icon"><span>Brush Tool</span></button></li>
+                    <li><button class="ToolButton" onclick="location.href='Eraser.html'"><img src="../../Graphics/EraserW.png" alt="Eraser Icon"><span>Eraser Tool</span></button></li>
+                    <li><button class="ToolButton" onclick="location.href='../Hand/Hand.html'"><img src="../../Graphics/HandW.png" alt="Hand Icon"><span>Hand Tool</span></button></li>
+                    <li><button class="ToolButton" onclick="location.href='../Shape/Shape.html'"><img src="../../Graphics/ShapeW.png" alt="Shape Icon"><span>Shape Tool</span></button></li>
+                </ul>
+            </aside>
+        </section>
 
-        <div class="Side">
-            <ul>
-                <li><button class="Brush" onclick="location.href='../Brush/Brush.html'"><img src="../../Graphics/BrushW.png">Brush Tool</button></li>
-                <li><button class="Eraser" onclick="location.href='Eraser.html'"><img src="../../Graphics/EraserW.png">Eraser Tool</button></li>
-                <li><button class="Hand" onclick="location.href='../Hand/Hand.html'"><img src="../../Graphics/HandW.png">Hand Tool</button></li>
-                <li><button class="Shape" onclick="location.href='../Shape/Shape.html'"><img src="../../Graphics/ShapeW.png">Shape Tool</button></li>
-            </ul>
-        </div>
+        <section class="TutorialSection">
+            <div class="VideoContainer">
+                
+                <div class="eraserV">
+                    <video controls width="900">
+                        <source src="../../videos/Brush/lv_0_20251104210838.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="VideoReference">reference "Lorem ipsum dolor sit"</p>
+                </div>
+                
+                <div class="VideoText">
+                    <h2>ERASER TOOL</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab omnis fugiat culpa quis voluptatem? Earum assumenda aliquam cumque maxime, aliquid exercitationem repudiandae dignissimos dolor minima quod laborum. Sed, laudantium veritatis.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer></footer>
 
 </body>
+
 </html>

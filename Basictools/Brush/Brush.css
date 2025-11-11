@@ -1,37 +1,76 @@
+/* GLOBAL RESET: Good as is */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* ADDED: Makes layout sizing more predictable */
 }
 
+/* BODY: Optimized Background and Font */
 body {
     font-family: sans-serif;
+    /* Cleaned up multi-background definition */
     background-image: url("../../Graphics/Top.png"), url(../../Graphics/Bottom.png);
     background-repeat: no-repeat, repeat;
-    background-size: cover;
-    background-position: center, right ;
+    background-size: cover, auto; /* Cover for the top, auto for the repeating texture */
+    background-position: center top, center;
     background-attachment: fixed;
     height: 100vh;
-    width: 100%;
+    /* width: 100% is redundant */
     image-rendering: optimizeQuality;
-    
 }
 
+/* HEADER/NAVBAR: Using Flexbox for navigation */
+.Navbar ul {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    list-style-type: none;
+    margin: 20px 55px 0 0; /* Removed absolute positioning */
+    padding: 0;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+li {
+    margin-left: 40px; /* Space between links */
+}
+
+a {
+    color: #c1c8f1;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+a:hover {
+    color: #ecf2f5;
+    transform: scale(1.05); /* Transition should be on li or a, not applied with hover */
+}
+
+/* MAIN CONTENT LAYOUT: Using Flexbox to arrange sections side-by-side */
+main {
+    display: flex;
+    justify-content: space-between; /* Space out the Desc and Side containers */
+    padding: 100px 55px 50px 55px; /* Added main padding */
+}
+
+/* LEFT SIDE (.Desc) */
 .Desc {
-    position: absolute;
-    margin-top: 190px;
+    /* Removed position: absolute and hard margins. Uses padding from main. */
+    flex: 1; /* Allows this section to grow */
+    max-width: 50%; /* Limits the width of the descriptive text */
 }
 
-h1 {
-    font-size: 50px;
-    max-width: 650px;
-    color: #002c7e;
-}
-
-img {
-    margin-top: -45%;
-    margin-left: -70%;
-    height: 950px;
+.Desc img { /* Photoshop Logo Image */
+    height: 550px;
+    margin: -15% 0 0 15%; /* Keep original positioning logic relative to the container */
+    position: relative;
+    z-index: -1;
     image-rendering: optimizeQuality;
+}
+
+h1 { /* BRUSH TOOL title */
+    font-size: 50px;
+    color: #002c7e;
+    margin-top: 50px; /* Space after the logo/image */
 }
 
 p {
@@ -39,56 +78,34 @@ p {
     color: #b0b8e2;
 }
 
-.Desc p {
-    margin-left: 60px;
-    left: 40px;
-}
-
-.Desc img {
-    position: relative;
-    z-index: -1;
-}
-
-ul {
-    position: absolute;
-    right: 15px;
+.Desc p { /* Description paragraph */
+    max-width: 500px;
     margin-top: 20px;
-    font-size: 25px;
-    font-weight: 600;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    transition: ease 0.3s;
+    margin-left: 60px;
 }
 
-.Navbar ul {
+
+/* RIGHT SIDE (.Side) */
+.Side {
+    flex: 0 0 350px; /* Fixes the width of the sidebar/tools section */
     display: flex;
-}
-
-li {
-    margin: 20px;
-}
-
-a {
-    transition: ease 0.3s;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .Side ul {
-    position: absolute;
-    right: 20px;
-    margin-right: 45px;
-    flex: none;
-    margin-top: 150px;
+    list-style-type: none;
+    margin-top: 0; /* Align to the top of the side container */
 }
 
-.Side li button {
+.Side li {
+    margin-left: 0;
     margin-top: 15px;
-    border: none;
 }
 
-
+/* BUTTONS: Using Flexbox for clean icon/text alignment */
 button {
-    margin-top: 25px;
+    margin-top: 15px; /* Spacing between buttons in the list */
     height: 75px;
     width: 225px;
     background-color: rgb(0, 0, 104);
@@ -97,19 +114,13 @@ button {
     border-radius: 8px;
     transition: ease 0.3s;
     cursor: pointer;
+    /* FLEXBOX for alignment */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns content to the start */
     align-items: center;
+    padding-left: 20px; /* Add padding for space from the edge */
     opacity: 85%;
 }
-
-.Side img{
-    height:75px;
-    position: absolute;
-    margin-left: -150px;
-    margin-top: 10px;
-}
-
 
 button:hover {
     transform: scale(1.05);
@@ -117,37 +128,52 @@ button:hover {
     opacity: 100%;
 }
 
+.Side img { /* Icon inside the button */
+    height: 40px; /* Reduced image size for better fit */
+    margin-right: 15px; /* Space between image and text */
+    /* REMOVED: position: absolute and negative margins */
+    position: static;
+}
+
+/* VIDEO AND TEXT AREA: Positioning relative to the main flow, NOT absolute to the body */
+/* Placed within the .Side container */
+
 .brushV {
-    position: absolute;
-    bottom: -700px;
-    left: 10px;
-    margin-bottom: 10px;
-    border-radius: 5%;
+    /* REMOVED: position: absolute, fixed bottom, and left coordinates */
+    margin-top: 40px;
     width: 100%;
 }
 
-.text{
-    position: absolute;
-    bottom: -450px;
-    left: 1050px;
-    margin-bottom: 10px;
-    border-radius: 5%;
+.brushV video {
     width: 100%;
+    max-width: 900px; /* Set a max width for the video */
+    height: auto;
 }
 
+.text {
+    /* REMOVED: position: absolute, fixed bottom, and left coordinates */
+    width: 100%;
+    margin-top: 40px;
+    color: #ecf2f5;
+    border-radius: 5%;
+}
 
+.text h1 {
+    font-size: 30px;
+    color: #ecf2f5;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
 
+.text p {
+    color: #ecf2f5;
+}
+
+/* Link Styles (A:link, A:active, etc.) - Good as is */
 a:link {
     color: #c1c8f1;
     background-color: transparent;
     text-decoration: none;
-}
-
-a:hover {
-    color: #ecf2f5;
-    background-color: transparent;
-    text-decoration: none;
-    transition: scale(1.05);
 }
 
 a:active {
