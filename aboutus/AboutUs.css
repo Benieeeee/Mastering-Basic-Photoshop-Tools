@@ -120,13 +120,20 @@ h2 {
 }
 
 .member-card {
-    width: 180px;
+    min-width: 180px;
+    max-width: 200px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 15px;
     transition: transform 0.4s, box-shadow 0.4s;
     animation: fadeInUp 1.5s ease;
+}
+
+.member-photo img {
+    height: 250px;
+    margin-left: -20px;
+    margin-top: -15px;
 }
 
 .member-card:hover {
@@ -137,15 +144,41 @@ h2 {
 .member-photo {
     width: 100%;
     height: 180px;
-    background-color: #163173;
+    background-color: ;
     border-radius: 10px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .member-card p {
     font-size: 18px;
     font-weight: 600;
     color: #092c50;
+}
+
+.More {
+    margin-top: 100px;
+    max-width: 50%;
+    margin-left: 25%;
+}
+
+.Ict {
+    margin-top: 100px;
+}
+
+.More h1 {
+    color: #01091c;
+}
+
+.More p {
+    font-weight: 300;
+    font-size: 20px;
+    color: #163173;
+}
+
+.More a {
+    color: #004c8f;
+    text-decoration: none;
 }
 
 /* ANIMATIONS */
