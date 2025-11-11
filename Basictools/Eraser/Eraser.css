@@ -1,227 +1,210 @@
-/* --- Global Resets and Variables --- */
+/* RESET */
 * {
-    box-sizing: border-box; 
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #002c7e; /* Dark Blue H1/Body Text */
-    --secondary-color: #51a7cf; /* Light Blue/Hover */
-    --accent-color: rgb(0, 0, 104); /* Button Background */
-    --text-light: antiquewhite; /* Button text/Hover link text */
-    --text-paragraph: #b0b8e2; /* Main paragraph text color */
-    --text-white: #ecf2f5; /* Video description text color */
-    --nav-link-color: #c1c8f1;
-    --max-content-width: 1200px;
-}
-
-/* --- Base Styles and Typography --- */
+/* BACKGROUND */
 body {
-    font-family: sans-serif;
-    min-height: 100vh;
-    line-height: 1.6;
-    color: var(--primary-color);
-    /* Optimized Background */
-    background-image: url("../../Graphics/Top.png"), url(../../Graphics/Bottom.png);
-    background-repeat: no-repeat, repeat;
-    background-size: cover, auto;
-    background-position: center top, center bottom;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #3048a0e6, #b61d1d);
+    background-image: url("../../Graphics/Top.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-blend-mode: overlay;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: fadeInBody 1s ease-in-out;
 }
 
-/* Headings */
-h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-h2 {
-    color: var(--text-white); /* Used for video heading */
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Paragraphs */
-p {
-    max-width: 500px;
-    color: var(--text-paragraph); 
-}
-.VideoText p {
-    color: var(--text-white); /* Override for video description text */
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 50, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
 }
 
-/* Links */
-a {
-    color: var(--nav-link-color);
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    height: 45px;
+    width: 45px;
+}
+
+.navbar h2 {
+    margin-top: -5px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: 0.3s;
 }
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #ffd700;
+}
+
+
+
+main img {
+    margin-top: -45%;
+    margin-left: -70%;
+    height: 950px;
+    image-rendering: optimizeQuality;
+}
+
+.title{
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    z-index: -1;
+}
+
+.itembox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 70px;
+    margin-top: 235px;
+}
+
+
+.itembox img{
+    height: 320px;
+    image-rendering: optimizeQuality;
+}
+
+.title h1 {
+    font-size: 100px;
+    margin-top: 75px;
+    margin-left: 18%;
+    color: #002c7e;
+}
+
+.title p {
+    position: absolute;
+    margin-top: 5%;
+    left: 15%;
+    max-width: 800px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+ul {
+    position: absolute;
+    right: 45px;
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: 600;
+    list-style-type: none;
+    padding: 0;
+    transition: ease 0.3s;
+}
+
+
+.Side ul {
+    position: fixed;
+    right: 20px;
+    flex: none;
+    margin-top: 75px;
+}
+
+.Side li button {
+    top: -85px;
+    border: none;
+    margin: 20px;
+}
+
+
+button {
+    margin-top: 25px;
+    height: 95px;
+    width: 325px;
+    background-color: rgba(0, 0, 104, 0.753);
+    color: antiquewhite;
+    border: none;
+    border-radius: 8px;
+    transition: ease 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 85%;
+}
+
+.Side img{
+    height:75px;
+    position: absolute;
+    margin-left: -150px;
+    margin-top: 10px;
+}
+
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #51a7cf;
+    opacity: 100%;
+}
+
+.brushV {
+    position: absolute;
+    top: 900px;
+    left: 50px;
+    margin-bottom: 40%;
+    border-radius: 5%;
+    width: 65%;
+}
+
+
+a:link {
+    color: #c1c8f1;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 a:hover {
-    color: var(--text-light);
+    color: #ecf2f5;
+    background-color: transparent;
+    text-decoration: none;
+    transition: scale(1.05);
 }
+
 a:active {
     color: rgb(213, 216, 255);
 }
 
-/* --- Navigation --- */
-.MainHeader {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.Navbar {
-    max-width: var(--max-content-width);
-    margin: 0 auto;
-    padding: 10px 20px;
-}
-.NavLinks {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-.NavLinks li {
-    margin-left: 1.25rem; /* Simplified margin */
-}
-
-
-/* --- Main Content Layout --- */
-.ContentArea {
-    padding: 20px; 
-    max-width: var(--max-content-width);
-    margin: 0 auto;
-}
-
-/* Hero Section (Title/Desc + Sidebar) */
-.HeroSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 80px;
-    gap: 40px;
-}
-
-.Desc {
-    flex: 1; 
-    padding-right: 20px;
-}
-
-/* Tool Sidebar */
-.ToolSidebar {
-    position: sticky;
-    top: 20px;
-    padding-top: 0;
-}
-.ToolList {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Buttons */
-.ToolButton {
-    height: 75px;
-    width: 225px;
-    background-color: var(--accent-color);
-    color: var(--text-light);
-    border: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    opacity: 0.85;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-}
-.ToolButton img {
-    height: 40px;
-    margin-right: 15px;
-}
-.ToolButton:hover {
-    transform: scale(1.05);
-    background-color: var(--secondary-color);
-    opacity: 1;
-}
-
-/* --- Tutorial Section (Video + Text) --- */
-.TutorialSection {
-    margin-top: 50px;
-    padding: 50px 0;
-}
-
-.VideoContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.eraserV {
-    width: 60%;
-}
-.eraserV video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5%;
-}
-.VideoReference {
-    color: var(--text-white);
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-
-.VideoText {
-    width: 40%;
-}
-
-
-/* --- Media Queries (Mobile Responsiveness) --- */
-@media (max-width: 900px) {
-    /* Hero Section Stacking */
-    .HeroSection {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    .Desc {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    /* Sidebar Layout */
-    .ToolSidebar {
-        position: static;
-        margin-bottom: 30px;
-    }
-    .ToolList {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    .ToolButton {
-        width: 48%; /* Use percentage for better fit */
-        min-width: 150px;
-        justify-content: center;
-        font-size: 0.9rem;
-    }
-    .ToolButton img {
-        margin: 0;
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
     }
 
-    /* Video Section Stacking */
-    .VideoContainer {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .eraserV, .VideoText {
-        width: 100%;
+    to {
+        opacity: 1;
     }
 }
+

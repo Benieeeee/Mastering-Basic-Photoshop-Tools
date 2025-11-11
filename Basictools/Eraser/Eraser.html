@@ -4,65 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastering Basic Photoshop Tools - Eraser Tool</title>
-    <link rel="icon" type="image/png" href="../../Favicon/Letran official logo.png">
+    <title>Mastering Basic Photoshop Tools</title>
+    <link rel="icon" type="img/jpg" href="../../Favicon/Letran official logo.png">
     <link rel="stylesheet" href="Eraser.css">
 </head>
 
 <body>
 
-    <header class="MainHeader">
-        <nav class="Navbar">
-            <ul class="NavLinks">
-                <li><a href="../../Index.html">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Sample Works</a></li>
-            </ul>
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="../../Favicon/Letran official logo.png" alt="Letran Logo" class="nav-logo">
+            <h2>Colegio de San Juan de Letran</h2>
+        </div>
+        <nav class="nav-links">
+            <a href="../../Index.html" class="active">Home</a>
+            <a href="../../aboutus/AboutUs.html">About Us</a>
+            <a href="#">Sample Works</a>
         </nav>
     </header>
 
-    <main class="ContentArea">
+    <main>
 
-        <section class="HeroSection">
-            <div class="Desc">
-                <h1>Eraser Tool</h1> 
-                <p>
-                    The Eraser Tool allows you to remove parts of an image or layer, creating transparency or exposing
-                    layers beneath. It's essential for refining your artwork with precision.
-                </p>
+        <div class="title">
+            <div class="itembox">
+                <img src="../../Graphics/EraserW.png">
             </div>
+
+            <h1>ERASER TOOL</h1>
+
+            <br>
             
-            <aside class="ToolSidebar">
-                <ul class="ToolList">
-                    <li><button class="ToolButton" onclick="location.href='../Brush/Brush.html'"><img src="../../Graphics/BrushW.png" alt="Brush Icon"><span>Brush Tool</span></button></li>
-                    <li><button class="ToolButton" onclick="location.href='Eraser.html'"><img src="../../Graphics/EraserW.png" alt="Eraser Icon"><span>Eraser Tool</span></button></li>
-                    <li><button class="ToolButton" onclick="location.href='../Hand/Hand.html'"><img src="../../Graphics/HandW.png" alt="Hand Icon"><span>Hand Tool</span></button></li>
-                    <li><button class="ToolButton" onclick="location.href='../Shape/Shape.html'"><img src="../../Graphics/ShapeW.png" alt="Shape Icon"><span>Shape Tool</span></button></li>
-                </ul>
-            </aside>
-        </section>
+            <p>
+                The eraser tool is primarily used to change the colors of the pixels to either transparent or to match
+                the color of the file’s background. It is usually located on the left-hand toolbar and also activated
+                through a shortcut by pressing the “E” on your keyboard. The eraser tool can be modified according to
+                the user’s preferences, functioning similarly to the brush tool. The user is able to change features
+                such as its hardness and size in the options bar. The tool is used by selecting a layer and pressing the
+                tool to the desired area that you want to erase on your canvas once it is activated. Its icon is
+                symbolized as an eraser on the toolbar.
+            </p>
 
-        <section class="TutorialSection">
-            <div class="VideoContainer">
-                
-                <div class="eraserV">
-                    <video controls width="900">
-                        <source src="../../videos/Brush/lv_0_20251104210838.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="VideoReference">reference "Lorem ipsum dolor sit"</p>
-                </div>
-                
-                <div class="VideoText">
-                    <h2>ERASER TOOL</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab omnis fugiat culpa quis voluptatem? Earum assumenda aliquam cumque maxime, aliquid exercitationem repudiandae dignissimos dolor minima quod laborum. Sed, laudantium veritatis.</p>
-                </div>
+        </div>
+
+
+        </div>
+
+        <div class="Side">
+
+            <div class="brushV">
+                <video controls width="100%">
+                    <source src="../../videos/Eraser/lv_0_20251104210954.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>https://youtu.be/yUYeXMtCD1Q?si=W9ciaxRCD3ZpswiE</p>
             </div>
-        </section>
 
-    </main>
 
-    <footer></footer>
+            <nav class="ToolNav">
+                <ul>
+                    <li>
+                        <button class="Brush" onclick="location.href='../Brush/Brush.html'">
+                            <img src="../../Graphics/BrushW.png" alt="Brush Icon">Brush Tool
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Eraser" onclick="location.href='Eraser.html'">
+                            <img src="../../Graphics/EraserW.png" alt="Eraser Icon">Eraser Tool
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Hand" onclick="location.href='../Hand/Hand.html'">
+                            <img src="../../Graphics/HandW.png" alt="Hand Icon"> Hand Tool
+                        </button>
+                    </li>
+                    <li>
+                        <button class="Shape" onclick="location.href='../Shape/Shape.html'">
+                            <img src="../../Graphics/ShapeW.png" alt="Shape Icon"> Shape Tool
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
 
 </body>
 
